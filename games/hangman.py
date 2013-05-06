@@ -57,7 +57,7 @@ class Hangman(object):
         if self.final_state == self.current_state:
             sys.exit("You win!")
         if self.guesses == len(self.guessed_letters):
-            sys.exit("You loose!")
+            sys.exit("You lose!")
 
     def play(self):
         self.initialize()

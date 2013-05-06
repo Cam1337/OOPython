@@ -11,30 +11,30 @@ class TileValues(object):
             "s":1,
             "t":1,
             "u":1,
-            
+
             "d":2,
             "g":2,
-            
+
             "b":3,
             "c":3,
             "m":3,
             "p":3,
-            
+
             "f":4,
             "h":4,
             "v":4,
             "w":4,
             "y":4,
-            
+
             "k":5,
-            
+
             "j":8,
             "x":8,
-            
+
             "q":10,
             "z":10
             }
-    
+
     def get(self, letter):
         return self.values.get(letter.lower(),0)
 
@@ -58,42 +58,42 @@ class ScrabbleBoard(object):
                 "004000202000400",
                 "040003000300040",
                 "500200050002005"]
-                
+
         self.values = [
-                '               ', 
-                '               ', 
-                '               ', 
-                '               ', 
-                '               ', 
-                '               ', 
-                '               ', 
-                '               ', 
-                '               ', 
-                '               ', 
-                '               ', 
-                '               ', 
-                '               ', 
-                '               ', 
+                '               ',
+                '               ',
+                '               ',
+                '               ',
+                '               ',
+                '               ',
+                '               ',
+                '               ',
+                '               ',
+                '               ',
+                '               ',
+                '               ',
+                '               ',
+                '               ',
                 '               ']
-        
+
         self.tileOwners = [
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
-                    
-        
+
+
     def display(self):
         """
         Print out the board in a human readable way :)
@@ -110,30 +110,30 @@ class ScrabbleBoard(object):
         """
         ]coordinate = (x,y) coordinates (tuple)
         ]player = player object (player class)
-        Return the value for one tile on any given space. 
-        Calculates tile's value and any multiplier on the space below it. 
+        Return the value for one tile on any given space.
+        Calculates tile's value and any multiplier on the space below it.
         Does not calculate word multipliers.
         """
         x,y = coordinate
-        
+
         value = self.getLetterValue(coordinate)
-        
+
         multiplier = int(self.multipliers[y][x])
         tileScore  = self.tileScores.get(value)
-        
+
         if multiplier in [2,3]:
             return tileScore * multiplier
         return tileScore
-        
+
     def getLetterValue(self, coordinate):
         """
         ]coordinate = (x,y) coordinates (tuple)
         Return the letter of the tile for a given x,y coordinate.
         """
-        x,y = coordinate        
+        x,y = coordinate
         value = self.values[y][x]
         return value
-    
+
     def setValue(self, coordinate, value, player):
         """
         ]coordinate = (x,y) coordinates (tuple)
@@ -148,7 +148,7 @@ class ScrabbleBoard(object):
         self.tileOwners[y][x] = player
         return True
         #return self.getLetterScore(coordinate, player)
-    
+
     def getPathFromCoordinates(self, x0, y0, x1, y1):
         """
         Python Bresehnam's Line Algorithm implementation
@@ -169,7 +169,7 @@ class ScrabbleBoard(object):
         error = -dx / 2
         y = y0
 
-        path = []    
+        path = []
         for x in range(x0, x1 + 1):
             if steep: path.append((y,x))
             else:     path.append((x,y))
@@ -179,13 +179,13 @@ class ScrabbleBoard(object):
                 y = y + ystep
                 error = error - dx
         return path
-        
+
     def checkValidWord(self, word):
         """
         Implement this if you want to include a dictionary to check for word validity.
         """
         return True
-    
+
     def checkNeighbors(self, path):
         if self.allowNeighbors:
             return True
@@ -199,7 +199,7 @@ class ScrabbleBoard(object):
                 if self.values[y2][x2] != " ":
                     return False
         return True
-        
+
     def canPlaceWord(self, word, start, end):
         """
         Runs a series of tests against the word and coordinates and proposed playing line.
@@ -215,25 +215,25 @@ class ScrabbleBoard(object):
         sx,sy = start
         ex,ey = end
         lw1   = len(word) - 1 # coordinates are offset by -1
-        
+
         test1 = ((-1 < ex < 16) and (-1 < ey < 16) and (-1 < sx < 16) and (-1 < sy < 16))
         test2 = (abs(ex - sx) == lw1 or abs(ey - sy) == lw1)
         test3 = (isdgt(ex) and isdgt(ey) and isdgt(sx) and isdgt(sy))
         test4 = (ey == sy or ex == sx)
-        
+
         if not test2: return False
-        
+
         tilePath = self.getPathFromCoordinates(sx,sy,ex,ey)
         tileSafe = [self.values[v[1]][v[0]] in [" ",word[i]] for i,v in enumerate(tilePath)]
 
         test5 = all(tileSafe)
-        
+
         test6 = self.checkNeighbors(tilePath)
-        
+
         # return true if all of the tests are passed
         return test1 and test2 and test3 and test4 and test5 and test6
-        
-        
+
+
     def setWord(self, word, start, end, player):
         """
         ]word = word to play (string)
@@ -247,7 +247,7 @@ class ScrabbleBoard(object):
         """
         _wordScore = 0
         wordMultipliers = []
-        
+
         # This is where the main logic for adding words is
         if (self.canPlaceWord(word,start,end) and self.checkValidWord(word)):
             path = self.getPathFromCoordinates(start[0], start[1], end[0], end[1])
@@ -277,31 +277,31 @@ class Player(object):
         self.scores.append(score)
         self.score += score
     def __repr__(self):
-        return self.name
+        return "<Player(Object) '"+ self.name + "'>"
 
 
 
 def playGame():
     player1 = Player("John")
     player2 = Player("Elisa")
-    
+
     scorePrint = lambda pl: "{0}'s score is {1} with {2} words played.".format(pl.name, pl.score, len(pl.words))
-    
+
     board = ScrabbleBoard(allowNeighbors=False)
-    
+
     board.setWord("corn",  (4,5),(7,5),  player1)
     board.setWord("porn",  (4,4),(7,4), player1)
     board.setWord("pants", (7,3),(7,7),  player2)
     board.setWord("star",  (7,7),(10,7), player1)
     board.setWord("apple", (9,7),(9,11), player2)
     board.setWord("airplane", (2,11),(9,11), player1)
-    
+
     board.display()
-    
+
     print scorePrint(player1)
     print scorePrint(player2)
-    
-    
+
+
 
 if __name__ == "__main__":
     playGame()
